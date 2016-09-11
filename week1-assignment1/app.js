@@ -35,6 +35,7 @@ function LunchCheckController ($scope) {
     }
   };
 
+  // apparently ng-blur does not work on Safari or FF - Chrome is OK
   $scope.resetMessage = function () {
     $scope.message = '';
   }
