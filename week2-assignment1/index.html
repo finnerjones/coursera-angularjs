@@ -43,9 +43,9 @@
     <div class="col-md-6" ng-controller="AlreadyBoughtShoppingController as boughtCtrl">
      <h2>Already Bought:</h2>
      <ul>
-       <li ng-repeat="item in boughtCtrl.getItemsBought()">Bought {{item.quantity}} {{item.name}}</li>
+       <li ng-repeat="item in boughtCtrl.service.boughtItems">Bought {{item.quantity}} {{item.name}}</li>
      </ul>
-     <div ng-if="!boughtCtrl.getItemsBought()" class="emptyMessage">Nothing bought yet.</div>
+     <div ng-if="!boughtCtrl.service.boughtItems" class="emptyMessage">Nothing bought yet.</div>
     </div>
   </div>
 </div>

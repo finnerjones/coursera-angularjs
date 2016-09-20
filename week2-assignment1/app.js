@@ -23,12 +23,7 @@ function ToBuyShoppingController(ShoppingListCheckOffService) {
 AlreadyBoughtShoppingController.$inject = ['ShoppingListCheckOffService'];
 function AlreadyBoughtShoppingController(ShoppingListCheckOffService) {
   var boughtCtrl = this;
-
-  boughtCtrl.boughtItems = ShoppingListCheckOffService.getItemsBought();
-
-  boughtCtrl.getItemsBought = function () {
-    boughtCtrl.boughtItems = ShoppingListCheckOffService.getItemsBought();
-  }
+  boughtCtrl.service = ShoppingListCheckOffService;
 
 }
 
@@ -48,11 +43,16 @@ function ShoppingListCheckOffService() {
   service.boughtItems;
 
   service.itemBought = function (item) {
-    service.toBuyItems.splice(item, 1);
+    console.log(' [1. service.toBuyItems] ' + JSON.stringify(service.toBuyItems));
+    var index = service.toBuyItems.indexOf(item);
+    console.log(' [index] ' + index);
+    service.toBuyItems = service.toBuyItems.splice(index, 1);
     if (!service.boughtItems) {
       service.boughtItems = [];   // initialize the list in order to add an item
     }
     service.boughtItems.push(item);
+    console.log(' [2. service.toBuyItems] ' + JSON.stringify(service.toBuyItems));
+
   };
 
   service.getItemsToBuy = function () {
