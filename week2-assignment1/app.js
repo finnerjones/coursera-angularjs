@@ -10,8 +10,7 @@ angular.module('ShoppingListCheckOff',[])
 ToBuyShoppingController.$inject = ['ShoppingListCheckOffService'];
 function ToBuyShoppingController(ShoppingListCheckOffService) {
   var toBuyCtrl = this;
-
-  toBuyCtrl.toBuyItems = ShoppingListCheckOffService.toBuyItems;
+  toBuyCtrl.service = ShoppingListCheckOffService;
 
   toBuyCtrl.itemBought = function (item) {
     ShoppingListCheckOffService.itemBought(item);
@@ -42,15 +41,19 @@ function ShoppingListCheckOffService() {
   service.boughtItems;
 
   service.itemBought = function (item) {
-    console.log(' [1. service.toBuyItems] ' + JSON.stringify(service.toBuyItems));
-    var index = service.toBuyItems.indexOf(item);
-    console.log(' [index] ' + index);
-    service.toBuyItems = service.toBuyItems.splice(index, 1);
+    var tmpArray = [];
+    for (var i = 0; i < service.toBuyItems.length; i++) {
+      if (service.toBuyItems[i].name != item.name) {
+        tmpArray.push(service.toBuyItems[i]);
+      }
+    }
+
+    service.toBuyItems = tmpArray;
+
     if (!service.boughtItems) {
       service.boughtItems = [];   // initialize the list in order to add an item
     }
     service.boughtItems.push(item);
-    console.log(' [2. service.toBuyItems] ' + JSON.stringify(service.toBuyItems));
 
   };
 
