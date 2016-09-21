@@ -57,16 +57,6 @@ function ShoppingListCheckOffService() {
 
   };
 
-  service.getItemsToBuy = function () {
-    return service.toBuyItems;
-  };
-
-  service.getItemsBought = function () {
-    return service.boughtItems;
-  };
-
-
-
 }
 
 })();
