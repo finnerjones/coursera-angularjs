@@ -7,7 +7,6 @@ angular.module('ShoppingListCheckOff',[])
 // one service to rule them all :)
 .service('ShoppingListCheckOffService', ShoppingListCheckOffService);
 
-
 ToBuyShoppingController.$inject = ['ShoppingListCheckOffService'];
 function ToBuyShoppingController(ShoppingListCheckOffService) {
   var toBuyCtrl = this;
