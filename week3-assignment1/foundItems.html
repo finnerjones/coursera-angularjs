@@ -2,10 +2,10 @@
 <div class="row">
 <ul ng-repeat="menuItem in list.foundItems">
 
-  <div class="col-md-10">{{ menuItem.name}}, {{ menuItem.short_name}}, {{ menuItem.description }}</div>
+  <div class="col-md-10">{{ menuItem.name}}, <strong>{{ menuItem.short_name}}</strong>, {{ menuItem.description }}</div>
   <div class="col-md-2">
     <button class="btn btn-primary" ng-click="list.onRemove({index: $index})">Don't want this one!</button>
   </div>
-
 </ul>
 </div>
+<div class="error" ng-if="list.emptyList()">Nothing Found</div>

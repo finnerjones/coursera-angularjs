@@ -27,10 +27,11 @@ function FoundItemsDirective () {
 function FoundItemsDirectiveController () {
   var list = this;
 
+  list.emptyList = function () {
+    return (!list.foundItems || list.foundItems.length == 0);
+  }
 
 }
-
-
 
 NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController (MenuSearchService) {
@@ -65,7 +66,7 @@ function MenuSearchService($http) {
 
       var found = [];
       if (!searchTerm || searchTerm === '') {
-        found = allItems['menu_items'];
+        found = [];
       } else {
         for (var idx = 0; idx < allItems['menu_items'].length; idx++) {
           if (allItems['menu_items'][idx].description.toLowerCase().indexOf(searchTerm.toLowerCase()) != -1) {
