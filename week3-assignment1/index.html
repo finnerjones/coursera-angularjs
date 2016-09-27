@@ -21,7 +21,7 @@
     <items-loader-indicator></items-loader-indicator>
 
     <!-- found-items should be implemented as a component -->
-    <found-items found-items="...." on-remove="...."></found-items>
+    <found-items found-items="ctrl.found" on-remove="ctrl.removeItems(index)"></found-items>
   </div>
 
   <script src="angular.min.js"></script>

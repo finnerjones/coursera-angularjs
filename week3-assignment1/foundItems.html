@@ -1,0 +1,11 @@
+<!-- Using Bootstrap styles to get to make it look a bit presentable -->
+<div class="row">
+<ul ng-repeat="menuItem in list.foundItems">
+
+  <div class="col-md-10">{{ menuItem.name}}, {{ menuItem.short_name}}, {{ menuItem.description }}</div>
+  <div class="col-md-2">
+    <button class="btn btn-primary" ng-click="list.onRemove({index: $index})">Don't want this one!</button>
+  </div>
+
+</ul>
+</div>
