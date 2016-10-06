@@ -12,12 +12,18 @@ function MenuRoutesConfig ($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/home',
-      templateUrl: 'home.html'
+      templateUrl: 'templates/home.html'
     })
 
     .state('categories', {
       url: '/categories',
-      templateUrl: 'categories.html'
+      templateUrl: 'templates/categories.html',
+      controller: 'CategoriesComponentController as $ctrl',
+      resolve: {
+        categories: ['MenuDataService', function (MenuDataService) {
+          return MenuDataService.getAllCategories();
+        }]
+      }
     });
 }
 
