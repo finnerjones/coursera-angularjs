@@ -12,7 +12,7 @@
           <td>{{category.short_name}}</td>
           <td>{{category.name}}</td>
           <td>{{category.special_instructions}}</td>
-          <td><a ui-sref="items" class="btn btn-info btn-sm" role="button">Menu Items</a></td>
+          <td><a ui-sref="items({categoryShortName: category.short_name})" class="btn btn-info btn-sm" role="button">Menu Items</a></td>
       </tr>
     </tbody>
   </table>

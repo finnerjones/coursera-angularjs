@@ -27,13 +27,13 @@ function MenuRoutesConfig ($stateProvider, $urlRouterProvider) {
     })
 
     .state('items', {
-      url: '/items',
+      url: '/items/:categoryShortName',
       templateUrl: 'templates/items.html',
       controller: 'ItemsComponentController as $ctrl',
       resolve: {
         items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
-          // return MenuDataService.getItemsForCategory(stateParams.categoryShortName);
-          return MenuDataService.getItemsForCategory('L');
+          return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
+          //return MenuDataService.getItemsForCategory('L');
         }]
       }
     });
