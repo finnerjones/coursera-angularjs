@@ -25,6 +25,8 @@ function MenuDataService ($http, CATEGORIES_URL, CATEGORY_ITEMS_URL) {
     return $http({
       method: 'GET',
       url: CATEGORY_ITEMS_URL + categoryShortName
+    }).then(function (response) {
+      return response;
     });
   };
 
