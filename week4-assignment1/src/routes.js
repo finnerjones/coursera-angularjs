@@ -27,7 +27,7 @@ function MenuRoutesConfig ($stateProvider, $urlRouterProvider) {
     })
 
     .state('items', {
-      url: '/items/:categoryShortName',
+      url: '/items/{categoryShortName}',
       templateUrl: 'src/templates/items.html',
       controller: 'ItemsComponentController as $ctrl',
       resolve: {
