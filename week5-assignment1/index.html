@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"ng-app="MenuApp">
+  <head>
+    <title>Menu App (week4 assignment)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+<body>
+  <div class="container" >
+    <h1>Week4 Restaurant (Cookie Free Zone)</h4>
+
+    <ui-view></ui-view>
+    <br/><br/>
+    <p><small>Disclaimer: The application author actually really likes cookies and does not agree with Cookie Free Zones</small></p>
+  </div>
+
+  <!-- libraries -->
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/angular-ui-router.min.js"></script>
+
+  <!-- application modules -->
+  <script src="src/menuapp.module.js"></script>
+  <script src="src/services/data.module.js"></script>
+
+  <!-- categories component -->
+  <script src="src/components/categories-component/categories.component.js"></script>
+  <script src="src/components/categories-component/categories.component.controller.js"></script>
+  <script src="src/components/items-component/items.component.js"></script>
+  <script src="src/components/items-component/items.component.controller.js"></script>
+
+  <!-- services -->
+  <script src="src/services/menudata.service.js"></script>
+
+  <!-- routes -->
+  <script src="src/routes.js"></script>
+
+</body>
+</html>
