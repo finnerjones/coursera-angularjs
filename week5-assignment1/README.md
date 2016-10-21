@@ -7,3 +7,14 @@ Enroll in the [complete free course on AngularJS][aeac87f1]
 
   [Single Page Web Applications with AngularJS][39804538]
   [39804538]: https://www.coursera.org/learn/single-page-web-apps-with-angularjs "Enroll in the course on AngluarJS"
+
+
+
+## Restaurant Server on Heroku
+
+http://sf-hu-ajs-week5.herokuapp.com/menu_items.json
+
+## Restaurant Server Admin
+
+username: sfinn
+password: sfinn
