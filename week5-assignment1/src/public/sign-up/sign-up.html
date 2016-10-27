@@ -1,0 +1,29 @@
+<div ng-controller="SignUpController as $ctrl">
+  <h1>David Chu's China Bistro Newsletter (that will never come!)</h1>
+
+  <fieldset>
+    <legend>Sign up for our infamour newsletter</legend>
+    <form name='regForm' novalidate>
+
+      <input type="text" name="firstName" placeholder="First Name"
+        ng-model="$ctrl.userDetails.firstName"
+        required>
+        <span
+          ng-if="(regForm.userDetails.$error.required) && regForm.username.$touched">
+          First name is a required field
+        </span>
+        <br>
+
+
+      <button
+        ng-disabled="regForm.$invalid"
+        ng-click="$ctrl.submit()">Submit</button>
+
+        <div style="margin-top: 10px;">
+          Form valid? {{ regForm.$valid }}
+        </div>
+    </form>
+  </fieldset>
+
+
+</div>
