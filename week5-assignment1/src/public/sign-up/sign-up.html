@@ -1,29 +1,79 @@
-<div ng-controller="SignUpController as $ctrl">
-  <h1>David Chu's China Bistro Newsletter (that will never come!)</h1>
+<div class="container">
 
-  <fieldset>
-    <legend>Sign up for our infamour newsletter</legend>
-    <form name='regForm' novalidate>
+  <div class="col-md-12">
 
-      <input type="text" name="firstName" placeholder="First Name"
-        ng-model="$ctrl.userDetails.firstName"
-        required>
-        <span
-          ng-if="(regForm.userDetails.$error.required) && regForm.username.$touched">
-          First name is a required field
-        </span>
-        <br>
+    <div ng-controller="SignUpController as $ctrl">
+      <h3>David Chu's China Bistro Newsletter (that will never come!)</h3>
 
+        <form name='regForm' novalidate>
 
-      <button
-        ng-disabled="regForm.$invalid"
-        ng-click="$ctrl.submit()">Submit</button>
-
-        <div style="margin-top: 10px;">
-          Form valid? {{ regForm.$valid }}
-        </div>
-    </form>
-  </fieldset>
+          <!-- First Name -->
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" name="firstName" placeholder="First Name" class="form-control"
+              ng-model="$ctrl.userDetails.firstName"
+              required>
+            <span
+              ng-if="regForm.firstName.$error.required && regForm.firstName.$touched">
+              First name is a required field
+            </span>
+          </div>
 
 
-</div>
+          <!-- Last Name -->
+          <div class"form-group">
+            <label>Last Name</label>
+            <input type="text" name="lastName" placeholder="Last Name" class="form-control"
+              ng-model="$ctrl.userDetails.lastName"
+              required>
+            <span
+              ng-if="regForm.lastName.$error.required && regForm.lastName.$touched">
+              Last name is a required field
+            </span>
+          </div>
+
+          <!-- Email Address -->
+          <div class"form-group">
+            <label>email :</label>
+            <input type="email" name="email" placeholder="email" class="form-control"
+              ng-model="$ctrl.userDetails.email"
+              required>
+            <span
+              ng-if="regForm.email.$invalid && regForm.email.$touched">
+              Email is a required field. Format xxxxx@xxxxx.xxx
+            </span>
+          </div>
+
+          <!-- Phone Address -->
+          <div class"form-group">
+            <label>Phone :</label>
+            <input type="text" name="phone" placeholder="Phone number" class="form-control"
+              ng-model="$ctrl.userDetails.phone"
+              pattern="(\d{3})-(\d{3})-(\d{4})"
+              required>
+            <span
+              ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+              Phone is a required field. Format nnn-nnn-nnnn
+            </span>
+          </div>
+
+          <!-- Submit Button -->
+          <p/>
+          <div class="form-group">
+            <button
+              ng-disabled="regForm.$invalid"
+              ng-click="$ctrl.submit()">Submit</button>
+
+            <div style="margin-top: 10px;">
+                Form valid? {{ regForm.$valid }}
+            </div>
+
+          </div>
+        </form>
+
+
+    </div>  <!-- ng-controller -->
+
+  </div>  <!-- col-md-12 -->
+
+</div>  <!-- container -->

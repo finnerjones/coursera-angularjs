@@ -8,7 +8,10 @@ SignUpController.$inject = [];
 function SignUpController() {
   var $ctrl = this;
   $ctrl.userDetails = {
-    firstName: undefined
+    firstName: undefined,
+    lastName: undefined,
+    email: undefined,
+    phone: undefined
   };
 
 
