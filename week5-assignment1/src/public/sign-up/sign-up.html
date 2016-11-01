@@ -73,7 +73,10 @@
               ng-if="regForm.favDishShortName.$error.required && regForm.favDishShortName.$touched">
               Your favorite dish is a required field.
             </span>
-
+            <span
+              ng-if="!$ctrl.formSaved && $ctrl.error">
+              No such menu number exists
+            </span>
           </div>
 
 
@@ -82,7 +85,7 @@
           <div class="form-group">
             <button
               ng-disabled="regForm.$invalid"
-              ng-click="$ctrl.submit()">Submit</button>
+              ng-click="$ctrl.submit(regForm)">Submit</button>
 
             <div style="margin-top: 10px;">
                 Form valid? {{ regForm.$valid }}
@@ -93,7 +96,7 @@
 
         <div ng-if="$ctrl.formSaved">Your information has been saved.</div>
 
-        <div ng-if="!$ctrl.formSaved && $ctrl.favDishError">Favorite dish does not exist please revise</div>
+        <div ng-if="$ctrl.favDishError && !$ctrl.formSaved">Favorite dish does not exist please revise</div>
 
 
     </div>  <!-- ng-controller -->

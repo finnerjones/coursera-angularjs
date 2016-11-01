@@ -13,5 +13,9 @@ function PreferencesService() {
     service.userPreferences = formDetails;
   }
 
+  service.getPreferences = function() {
+    return service.preferences;
+  }
+
 }
 })();
