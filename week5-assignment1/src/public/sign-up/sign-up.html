@@ -13,6 +13,7 @@
             <input type="text" name="firstName" placeholder="First Name" class="form-control"
               ng-model="$ctrl.userDetails.firstName"
               required>
+            {{ $ctrl.userDetails.firstName }}
             <span
               ng-if="regForm.firstName.$error.required && regForm.firstName.$touched">
               First name is a required field
@@ -21,11 +22,12 @@
 
 
           <!-- Last Name -->
-          <div class"form-group">
+          <div class="form-group">
             <label>Last Name</label>
             <input type="text" name="lastName" placeholder="Last Name" class="form-control"
               ng-model="$ctrl.userDetails.lastName"
               required>
+              {{ $ctrl.userDetails.lastName }}
             <span
               ng-if="regForm.lastName.$error.required && regForm.lastName.$touched">
               Last name is a required field
@@ -33,29 +35,48 @@
           </div>
 
           <!-- Email Address -->
-          <div class"form-group">
-            <label>email :</label>
+          <div class="form-group">
+            <label>email</label>
             <input type="email" name="email" placeholder="email" class="form-control"
               ng-model="$ctrl.userDetails.email"
               required>
+              {{ $ctrl.userDetails.email }}
             <span
               ng-if="regForm.email.$invalid && regForm.email.$touched">
-              Email is a required field. Format xxxxx@xxxxx.xxx
+              Required format xxxxx@xxxxx.xxx
             </span>
           </div>
 
           <!-- Phone Address -->
-          <div class"form-group">
-            <label>Phone :</label>
+          <div class="form-group">
+            <label>Phone</label>
             <input type="text" name="phone" placeholder="Phone number" class="form-control"
               ng-model="$ctrl.userDetails.phone"
               pattern="(\d{3})-(\d{3})-(\d{4})"
               required>
+              {{ $ctrl.userDetails.phone }}
             <span
               ng-if="regForm.phone.$invalid && regForm.phone.$touched">
               Phone is a required field. Format nnn-nnn-nnnn
             </span>
           </div>
+
+          <!-- Favorite dish Address -->
+          <div class="form-group">
+
+            <label>Favorite dish</label>
+            <input type="text" name="dish" placeholder="Favorite dish" class="form-control"
+              ng-model="$ctrl.userDetails.dish"
+              pattern="^[A-Za-z]{2}$"
+              required>
+              {{ $ctrl.userDetails.dish }}              
+            <span
+              ng-if="regForm.dish.$invalid && regForm.dish.$touched">
+              Your favorite dish is a required field. Format XX
+            </span>
+
+          </div>
+
 
           <!-- Submit Button -->
           <p/>
@@ -71,7 +92,7 @@
           </div>
         </form>
 
-
+        {{ $ctrl.dish.name}}
     </div>  <!-- ng-controller -->
 
   </div>  <!-- col-md-12 -->
