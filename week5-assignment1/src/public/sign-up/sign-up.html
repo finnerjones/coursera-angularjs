@@ -13,7 +13,6 @@
             <input type="text" name="firstName" placeholder="First Name" class="form-control"
               ng-model="$ctrl.formDetails.firstName"
               required>
-            {{ $ctrl.formDetails.firstName }}
             <span
               ng-if="regForm.firstName.$error.required && regForm.firstName.$touched">
               First name is a required field
@@ -27,7 +26,6 @@
             <input type="text" name="lastName" placeholder="Last Name" class="form-control"
               ng-model="$ctrl.formDetails.lastName"
               required>
-              {{ $ctrl.formDetails.lastName }}
             <span
               ng-if="regForm.lastName.$error.required && regForm.lastName.$touched">
               Last name is a required field
@@ -40,7 +38,6 @@
             <input type="email" name="email" placeholder="email" class="form-control"
               ng-model="$ctrl.formDetails.email"
               required>
-              {{ $ctrl.formDetails.email }}
             <span
               ng-if="regForm.email.$invalid && regForm.email.$touched">
               Required format xxxxx@xxxxx.xxx
@@ -54,7 +51,6 @@
               ng-model="$ctrl.formDetails.phone"
               pattern="(\d{3})-(\d{3})-(\d{4})"
               required>
-              {{ $ctrl.formDetails.phone }}
             <span
               ng-if="regForm.phone.$invalid && regForm.phone.$touched">
               Phone is a required field. Format nnn-nnn-nnnn
@@ -68,7 +64,6 @@
             <input type="text" name="favDishShortName" placeholder="Favorite dish" class="form-control"
               ng-model="$ctrl.formDetails.favDishShortName"
               required>
-              {{ $ctrl.formDetails.favDishShortName }}
             <span
               ng-if="regForm.favDishShortName.$error.required && regForm.favDishShortName.$touched">
               Your favorite dish is a required field.
