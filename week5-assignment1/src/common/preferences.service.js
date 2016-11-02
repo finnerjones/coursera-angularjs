@@ -14,7 +14,7 @@ function PreferencesService() {
   }
 
   service.getPreferences = function() {
-    return service.preferences;
+    return service.userPreferences;
   }
 
 }
