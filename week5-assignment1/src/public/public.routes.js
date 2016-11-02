@@ -45,7 +45,12 @@ function routeConfig ($stateProvider) {
       url: '/signup',
       templateUrl: 'src/public/sign-up/sign-up.html',
       controller: 'SignUpController',
-      controllerAs: '$ctrl'
+      controllerAs: '$ctrl',
+      resolve: {
+        formDetails: ['PreferencesService', function (PreferencesService) {
+          return PreferencesService.getPreferences();
+        }]
+      }
     })
     .state('public.info', {
       url: '/info',
