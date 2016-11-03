@@ -114,7 +114,7 @@ h3.menu-item-title {
 /* END SINGLE CATEGORY PAGE */
 
 
-/* END SIGN UP PAGE */
+/* SIGN UP PAGE */
 form {
   color: black;
 }
@@ -127,6 +127,9 @@ form {
   border: 3px red solid;
 }
 
+form > div > span {
+  color: red;
+}
 
 /* END SIGN UP PAGE */
 
