@@ -27,10 +27,12 @@
       <h3>Favorite Dish ( {{ infoCtrl.preferences.favDishDetails.short_name }} )</h3>
 
       <div class="form-group">
-        <img ng-src="https://sf-hu-ajs-week5.herokuapp.com/images/{{infoCtrl.preferences.favDishDetails.short_name}}.jpg" alt="No Image"></img>
+          <h4>{{ infoCtrl.preferences.favDishDetails.name }}</h4>
       </div>
 
-
+      <div class="form-group">
+        <img ng-src="https://sf-hu-ajs-week5.herokuapp.com/images/{{infoCtrl.preferences.favDishDetails.short_name}}.jpg" alt="No Image"></img>
+      </div>
 
       <div class="form-group">
         <span ng-if="infoCtrl.preferences.favDishDetails.price_large">
@@ -40,10 +42,6 @@
          / {{ infoCtrl.preferences.favDishDetails.price_small | currency }} (Small)
         </span>
 
-      </div>
-
-      <div class="form-group">
-          {{ infoCtrl.preferences.favDishDetails.name }}
       </div>
 
       <div class="form-group">
